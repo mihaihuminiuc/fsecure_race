@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@android:color/background_dark"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <include
+        android:id="@+id/toolbar_container"
+        layout="@layout/main_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <SurfaceView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/camera_view"
+        />
+
+    <android.support.percent.PercentRelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_below="@+id/toolbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/logout_gorun"
+            app:layout_heightPercent="60%"
+            android:background="@drawable/intro_photo"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+
+        <LinearLayout
+            android:background="@color/white_color"
+            android:layout_below="@+id/logout_gorun"
+            android:id="@+id/scanner_container"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_heightPercent="40%"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/scanner"
+                />
+
+            <TextView
+                android:layout_marginTop="30dp"
+                android:textStyle="bold"
+                android:textSize="35sp"
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:gravity="center"
+                android:text="Scaneaza QR-Codul tău \n şi confirmă-ţi participarea la cros!" />
+        </LinearLayout>
+
+
+    </android.support.percent.PercentRelativeLayout>
+
+</RelativeLayout>

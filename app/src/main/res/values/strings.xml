@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">F-secure aplicatia de intrare la cros</string>
+    <string name="ok">OK</string>
+    <string name="last_name">Nume</string>
+    <string name="email">Email</string>
+    <string name="company">Companie</string>
+    <string name="category">Categoria</string>
+    <string name="tee_sheert">Măsură tricou</string>
+    <string name="first_name">Prenume</string>
+    <string name="phonenumber">Telefon</string>
+    <string name="function">Funcţie</string>
+    <string name="race_type">Tip cursa</string>
+    <string name="kit_type">Tip kit primit</string>
+    <string name="terms_and_conditions">Am citit si sunt de acord cu precizarile Declaratiei pe proprie raspundere in vederea participarii la evenimentul sportiv “F-secure Step by Step 2017” (disponibila pe site-ul F-secure.ro si aici)</string>
+    <string name="signature">Semnătură</string>
+    <string name="confirm_button">CONFIRMA PARTICIPAREA</string>
+    <string name="please_wait">Vă rugăm aşteptaţi</string>
+    <string name="insert_name">Introdu numele</string>
+    <string name="insert_lname">Introdu prenumele</string>
+    <string name="insert_company">Introdu compania</string>
+    <string name="insert_phone_number">Introdu numărul de telefon</string>
+    <string name="insert_function">Introdu funcţia ocupată</string>
+    <string name="inser_email">Introdu adresa de e-mail</string>
+    <string name="choose_category">Alege o categorie</string>
+    <string name="choose_tee_shiert_size">Alege o mărime de tricou</string>
+    <string name="choose_race_type">Alege un tip de cursă</string>
+    <string name="choose_kit">Alege un tip de kit</string>
+    <string name="contest_number">Numărul tău de concurs este:</string>
+    <string name="back">înapoi</string>
+    <string name="succes_string_1">îţi dorim mult succes</string>
+    <string name="succes_string_2">şi ne vedem la eveniment!</string>
+    <string name="tersm_and_conditions">Te rugăm să citeşti declaraţia pe proprie răspundere şi să confirmi că eşti de acord cu termenii aceşteia.</string>
+    <string name="user_save">Informaţiile au fost salvate</string>
+    <string name="signature_warning">Vă rugăm să semnaţi</string>
+    <string name="qr_code_error">QR-codul a fost deja scanat. Încercați alt qr-code.</string>
+</resources>
