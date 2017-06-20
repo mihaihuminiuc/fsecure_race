@@ -158,7 +158,6 @@ public class QrActivity extends AppCompatActivity {
 
                     final User[] newUser = new User[1];
 
-
                     String segments[] = barcodes.valueAt(0).displayValue.split("-");
                     String email = segments[segments.length - 1];
 
@@ -173,7 +172,7 @@ public class QrActivity extends AppCompatActivity {
                                 if(newUser[0].contestNumber.isEmpty() || newUser[0].contestNumber.equals(""))
                                     goToUserData(newUser[0]);
                                 else{
-                                    showDialog();
+                                    showDialog(newUser[0].contestNumber);
                                 }
 
                             } catch (JSONException e) {
@@ -207,10 +206,12 @@ public class QrActivity extends AppCompatActivity {
 
     }
 
-    private void showDialog(){
+    private void showDialog(String number){
         mProgressDialog.hide();
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(R.string.qr_code_error)
+        String message = getString(R.string.qr_code_error);
+        message = message.replace("XXX", number);
+        builder.setMessage(message)
                 .setTitle("Profil");
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {

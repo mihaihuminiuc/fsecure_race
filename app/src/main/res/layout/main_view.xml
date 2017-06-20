@@ -3,21 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="ro.fsecure.cros.f_secureaplicatiadeintrarelacors.MainActivity">
-    <LinearLayout
+    <android.support.percent.PercentRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:fitsSystemWindows="true">
         <include
             android:id="@+id/toolbar_container"
             layout="@layout/main_toolbar"
+            app:layout_heightPercent="13%"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
         <LinearLayout
             android:layout_margin="10dp"
+            android:layout_below="@+id/toolbar_container"
             android:id="@+id/back_layout"
+            app:layout_heightPercent="4%"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
@@ -37,8 +40,10 @@
                 />
         </LinearLayout>
         <FrameLayout
+            android:layout_below="@+id/back_layout"
             android:id="@+id/frame_x"
+            app:layout_heightPercent="83%"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-    </LinearLayout>
+    </android.support.percent.PercentRelativeLayout>
 </android.support.v4.widget.DrawerLayout>

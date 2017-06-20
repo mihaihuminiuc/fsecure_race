@@ -32,5 +32,5 @@
     <string name="tersm_and_conditions">Te rugăm să citeşti declaraţia pe proprie răspundere şi să confirmi că eşti de acord cu termenii aceşteia.</string>
     <string name="user_save">Informaţiile au fost salvate</string>
     <string name="signature_warning">Vă rugăm să semnaţi</string>
-    <string name="qr_code_error">QR-codul a fost deja scanat. Încercați alt qr-code.</string>
+    <string name="qr_code_error">QR-codul a fost deja scanat și i-a fost alocat numărul de concurs XXX. Pentru o noua înregistrare, încercați alt QR-code.</string>
 </resources>
