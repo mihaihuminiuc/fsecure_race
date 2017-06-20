@@ -16,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <SurfaceView
+        android:layout_below="@+id/toolbar_container"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_alignParentBottom="true"

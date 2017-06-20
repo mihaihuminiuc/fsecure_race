@@ -78,9 +78,9 @@ public class QrActivity extends AppCompatActivity {
         cameraView = (SurfaceView) findViewById(R.id.camera_view);
         mScannerView = (LinearLayout) findViewById(R.id.scanner_container);
 
-        PercentRelativeLayout.LayoutParams layoutParams= new PercentRelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT);
-        layoutParams.height=((int) (mScreenSize.x * 1.2));
-        layoutParams.width=((int) (mScreenSize.y * 0.9));
+        PercentRelativeLayout.LayoutParams layoutParams= new PercentRelativeLayout.LayoutParams(0,0);
+        layoutParams.height=((int) (mScreenSize.x * 0.83));
+        layoutParams.width=((int) (mScreenSize.y * 0.62));
         layoutParams.addRule(PercentRelativeLayout.ALIGN_PARENT_BOTTOM);
         layoutParams.addRule(PercentRelativeLayout.CENTER_HORIZONTAL);
         cameraView.setLayoutParams(layoutParams);
@@ -264,6 +264,9 @@ public class QrActivity extends AppCompatActivity {
     public void onResume() {
         super.onResume();
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        if(mProgressDialog!=null && mProgressDialog.isShowing())
+            mProgressDialog.dismiss();
+        hideCamera();
     }
 
     /**
