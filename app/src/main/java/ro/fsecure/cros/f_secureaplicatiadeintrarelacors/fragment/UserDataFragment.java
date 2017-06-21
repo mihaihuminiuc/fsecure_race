@@ -144,7 +144,7 @@ public class UserDataFragment extends Fragment {
         mSendButton = (Button) view.findViewById(R.id.confirm_button);
     }
 
-    private void setData(User user){
+    private void setData(User user) {
 
         mFirstName.setText(user.firstName);
         mLastName.setText(user.lastName);
@@ -163,56 +163,50 @@ public class UserDataFragment extends Fragment {
         mRaceType.setAdapter(adapterRaceType);
         mKitType.setAdapter(adapterKitType);
 
-        if(user.category!=null){
-            for(int i=0;i<adapterCategory.getCount();i++){
-                if(user.category.toLowerCase().equals(adapterCategory.getItem(i).toString().toLowerCase())){
+        if (user.category != null) {
+            for (int i = 0; i < adapterCategory.getCount(); i++) {
+                if (user.category.toLowerCase().equals(adapterCategory.getItem(i).toString().toLowerCase())) {
                     mCategory.setSelection(i);
                 }
             }
-        }else {
+        } else {
             mCategory.setSelection(0);
         }
 
-        if(user.raceType!=null){
-            for(int i=0;i<adapterRaceType.getCount();i++){
-                if(user.raceType.toLowerCase().equals(adapterRaceType.getItem(i).toString().toLowerCase())){
+        if (user.raceType != null) {
+            for (int i = 0; i < adapterRaceType.getCount(); i++) {
+                if (user.raceType.toLowerCase().equals(adapterRaceType.getItem(i).toString().toLowerCase())) {
                     mRaceType.setSelection(i);
                 }
             }
-        }else {
+        } else {
             mRaceType.setSelection(0);
         }
 
-        String tempString1=adapterKitType.getItem(2).toString().toLowerCase().trim();
-        tempString1 = tempString1.replaceAll("\\s+","");
+        String tempString1 = adapterKitType.getItem(2).toString().toLowerCase().trim();
+        tempString1 = tempString1.replaceAll("\\s+", "");
 
-        if(user.raceKit!=null){
-            if(user.raceKit.toLowerCase().equals(tempString1)){
-                mKitType.setSelection(0);
-                mTeeShirt.setSelection(0);
-            } else {
-                if(user.raceKit !=null){
-                    for(int i=0;i<adapterKitType.getCount();i++){
-                        String tempString=adapterKitType.getItem(i).toString().toLowerCase().trim();
-                        tempString = tempString.replaceAll("\\s+","");
-                        if(user.raceKit.toLowerCase().equals(tempString)){
-                            mKitType.setSelection(i);
-                        }
-                    }
-                }else {
-                    mKitType.setSelection(0);
-                }
-
-                if(user.teeSheetSize!=null){
-                    for(int i=0;i<adapterTeeShirtSize.getCount();i++){
-                        if(user.teeSheetSize.toLowerCase().equals(adapterTeeShirtSize.getItem(i).toString().toLowerCase())){
-                            mTeeShirt.setSelection(i);
-                        }
-                    }
-                }else {
+        if (user.raceKit != null) {
+            for (int i = 0; i < adapterKitType.getCount(); i++) {
+                String tempString = adapterKitType.getItem(i).toString().toLowerCase().trim();
+                tempString = tempString.replaceAll("\\s+", "");
+                if (user.raceKit.toLowerCase().equals(tempString1))
                     mTeeShirt.setSelection(0);
+                if (user.raceKit.toLowerCase().equals(tempString)) {
+                    mKitType.setSelection(i);
+                    if (user.teeSheetSize != null && !user.raceKit.toLowerCase().equals(tempString1)) {
+                        for (int j = 0; j < adapterTeeShirtSize.getCount(); j++) {
+                            if (user.teeSheetSize.toLowerCase().equals(adapterTeeShirtSize.getItem(j).toString().toLowerCase())) {
+                                mTeeShirt.setSelection(j);
+                            }
+                        }
+                    } else {
+                        mTeeShirt.setSelection(0);
+                    }
                 }
             }
+        } else {
+            mKitType.setSelection(0);
         }
     }
 

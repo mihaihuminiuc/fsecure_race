@@ -90,6 +90,7 @@ public class QrActivity extends AppCompatActivity {
         mScannerView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 showCamera();
                 if(checkCameraPermission()){
                     try {
@@ -99,6 +100,43 @@ public class QrActivity extends AppCompatActivity {
                     }
                 }
                 initCamera();
+
+/*
+
+                String response="[\n" +
+                        "    {\n" +
+                        "        \"id\": 178197,\n" +
+                        "        \"title\": \"test test\",\n" +
+                        "        \"part_first_name\": \"test\",\n" +
+                        "        \"part_last_name\": \"test 2\",\n" +
+                        "        \"email\": \"danutza_57@yahoo.com\",\n" +
+                        "        \"telephone\": \"0757033870\",\n" +
+                        "        \"company\": \"IDG\",\n" +
+                        "        \"function\": \"Account Manager\",\n" +
+                        "        \"category\": \"Femei 18+\",\n" +
+                        "        \"race\": \"3 km\",\n" +
+                        "        \"size\": \"m\",\n" +
+                        "        \"type\": \"kit2\",\n" +
+                        "        \"kit\": \"nu\",\n" +
+                        "        \"ksended\": \"nu\",\n" +
+                        "        \"numar_participare\": \"\",\n" +
+                        "        \"pass\": \"parola\",\n" +
+                        "        \"repass\": \"parola\"\n" +
+                        "    }\n" +
+                        "]";
+                final User[] newUser = new User[1];
+                JSONArray jsonArray = null;
+                try {
+                    jsonArray = new JSONArray(response);
+                    JSONObject jsonObject = jsonArray.getJSONObject(0);
+                    newUser[0] =new User(jsonObject);
+                    goToUserData(newUser[0]);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+*/
+
             }
         });
     }
@@ -111,7 +149,7 @@ public class QrActivity extends AppCompatActivity {
         cameraSource = new com.google.android.gms.vision.CameraSource
                 .Builder(getBaseContext(), barcodeDetector)
                 .setFacing(CameraSource.CAMERA_FACING_FRONT)
-                .setRequestedPreviewSize(((int) (mScreenSize.x * 0.5)),((int) (mScreenSize.y * 0.4)))
+                .setRequestedPreviewSize(((int) (mScreenSize.x * 0.4)),((int) (mScreenSize.y * 0.62)))
                 .build();
     }
 
